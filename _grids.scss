@@ -37,24 +37,26 @@ $gridWidth      : 960px;
 	overflow: hidden;
 }
 
+// Generates styles
 @for $i from 1 to $totalColumns {
 	.grid-#{$i}{
 		@include column($i);
 	}
 }
 
-/* Controls the column float */
+// Controls the column float
 [class^="grid-"] {
 	float: left;
 }
 
 /*
- *	This produces output like this, iterating through each column width
+ *	This iterates through each column and produces output like this:
+ * 
  *	.grid-1 {
- *		float: left;
  *		width: 6.25%;
  *		margin-left: 2.08333%;
  *	}
+ *
  *
  *	Simply add .grid-n as a class to your element
  *	<div class="grid-12">
