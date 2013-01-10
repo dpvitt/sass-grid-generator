@@ -1,0 +1,45 @@
+
+/* $Grids
+================================================== */
+
+// Bureau Responsive Grid
+// Based on CSS Wizardry / Harry Roberts Grid System
+// Author	: Daniel Pavitt - @dpvitt
+// URL		: http://danielpavitt.com
+//
+// =================================================================================
+
+// Grid default variable
+$totalColumns  	: 12;
+$columnWidth 	: 60px;
+$gutterWidth  	: 20px;
+$gridWidth		: 960px;
+
+
+// Grid Calculation for Percentages
+@function col($n) {
+	@return percentage( ( $n * $columnWidth ) / $gridWidth );
+}
+
+// Each column
+@mixin column($n) {
+	float: left;
+	width: col($n);
+	margin-left: percentage( $gutterWidth / $gridWidth );
+}
+
+// Grid container
+.grids {
+	width: auto;
+	max-width: $gridWidth;
+	margin-left: -(percentage( $gutterWidth / $gridWidth ));
+	clear: both;
+	list-style: none;
+	overflow: hidden;
+}
+
+@for $i from 1 to $totalColumns {
+	.grid-#{$i}{
+		@include column($i);
+	}
+}
