@@ -5,7 +5,7 @@
 // Bureau Responsive Grid
 // Based on CSS Wizardry / Harry Roberts Grid System
 // Author	: Daniel Pavitt - @dpvitt
-// URL		: http://danielpavitt.com
+// URL		: http://danielpavitt.com / http://bureau-va.com
 //
 // =================================================================================
 
@@ -23,7 +23,6 @@ $gridWidth		: 960px;
 
 // Each column
 @mixin column($n) {
-	float: left;
 	width: col($n);
 	margin-left: percentage( $gutterWidth / $gridWidth );
 }
@@ -44,6 +43,11 @@ $gridWidth		: 960px;
 	}
 }
 
+/* Controls the column float */
+[class^="grid-"] {
+	float: left;
+}
+
 /*
  *	This produces output like this, iterating through each column width
  *	.grid-1 {
@@ -56,3 +60,8 @@ $gridWidth		: 960px;
  *	<div class="grid-12">
  *
  */
+ 
+ #header, #main{
+	 background: red;
+	 height: 50px;
+ }
