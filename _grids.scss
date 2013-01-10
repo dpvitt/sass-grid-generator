@@ -43,3 +43,16 @@ $gridWidth		: 960px;
 		@include column($i);
 	}
 }
+
+/*
+ *	This produces output like this, iterating through each column width
+ *	.grid-1 {
+ *		float: left;
+ *		width: 6.25%;
+ *		margin-left: 2.08333%;
+ *	}
+ *
+ *	Simply add .grid-n as a class to your element
+ *	<div class="grid-12">
+ *
+ */
