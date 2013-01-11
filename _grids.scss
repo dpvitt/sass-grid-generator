@@ -13,7 +13,7 @@
 $totalColumns  	: 12;
 $columnWidth 	: 60px;
 $gutterWidth  	: 20px;
-$gridWidth      : 960px;
+$gridWidth      : $totalColumns * ($columnWidth + $gutterWidth);
 
 
 // Grid Calculation for Percentages
