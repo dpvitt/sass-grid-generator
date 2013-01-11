@@ -36,28 +36,21 @@ $gridWidth      : $totalColumns * ($columnWidth + $gutterWidth);
 	overflow: hidden;
 }
 
-// Generates styles
+// Generates placeholders instead of styles, these won't be output in our CSS
 @for $i from 1 to $totalColumns {
-	.grid-#{$i}{
+	%grid-#{$i}{
+		float: left;
 		@include column($i);
 	}
 }
 
-// Controls the column float
-[class^="grid-"] {
-	float: left;
-}
-
 /*
- *	This iterates through each column and produces output like this:
+ *	We can then extend the placeholder into our selector to keep semantic values
+ *	and scalable grids:
  * 
- *	.grid-1 {
- *		width: 6.25%;
- *		margin-left: 2.08333%;
+ *	sidebar {
+ *		@extend %grid-1;
  *	}
  *
- *
- *	Simply add .grid-n as a class to your element
- *	<div class="grid-12">
  *
  */
