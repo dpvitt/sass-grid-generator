@@ -16,7 +16,7 @@ $gridWidth      : $totalColumns * ($columnWidth + $gutterWidth);
 
 // Grid Calculation for Percentages
 @function col($n) {
-	@return percentage( ( $n * ($columnWidth + $gutterWidth) ) / $gridWidth );
+	@return percentage( (( $n * ($columnWidth + $gutterWidth) - $gutterWidth) ) / $gridWidth );
 }
 
 // Each column
