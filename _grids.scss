@@ -36,7 +36,7 @@ $gridWidth      : $totalColumns * ($columnWidth + $gutterWidth);
 }
 
 // Generates styles
-@for $i from 1 to $totalColumns {
+@for $i from 1 to ($totalColumns + 1) {
 	.grid-#{$i}{
 		@include column($i);
 	}
