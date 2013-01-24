@@ -36,7 +36,7 @@ $gridWidth      : $totalColumns * ($columnWidth + $gutterWidth);
 }
 
 // Generates placeholders instead of styles, these won't be output in our CSS
-@for $i from 1 to $totalColumns {
+@for $i from 1 to ($totalColumns + 1) {
 	%grid-#{$i}{
 		float: left;
 		@include column($i);
