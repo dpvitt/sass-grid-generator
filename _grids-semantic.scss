@@ -22,17 +22,18 @@ $gridWidth      : $totalColumns * ($columnWidth + $gutterWidth);
 // Each column
 @mixin column($n) {
 	width: col($n);
-	margin-left: percentage( $gutterWidth / $gridWidth );
+	margin-left: percentage( $gutterWidth / $gridWidth / 2 );
+	margin-right: percentage( $gutterWidth / $gridWidth / 2 );
 }
 
 // Grid container
 .grids {
 	width: auto;
 	max-width: $gridWidth;
-	margin-left: -(percentage( $gutterWidth / $gridWidth ));
 	clear: both;
 	list-style: none;
 	overflow: hidden;
+	margin: 0 auto;
 }
 
 // Generates placeholders instead of styles, these won't be output in our CSS
